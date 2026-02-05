@@ -1,3 +1,6 @@
+!(screenshot.png)
+
+
 minimal fastapi webauth app
 
 for run:
