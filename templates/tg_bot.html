@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .tg-wrapper {
+        max-width: 278px;   /* 1110 / 4 */
+        margin: 0 auto;
+    }
+
+    .tg-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+    }
+
+</style>
+
+<div class="columns is-centered">
+    <div class="column is-8">
+
+        <div class="box has-text-centered">
+            <h1 class="title has-text-black">tg_bot</h1>
+            <p class="subtitle has-text-black">caption</p>
+        </div>
+
+        <div class="box has-text-centered">
+            <figure class="image tg-wrapper">
+                <img src="{{ url_for('static', path='img/tg_bot_img.jpeg') }}"
+                     alt="preview"
+                     class="tg-image">
+            </figure>
+
+            <div class="buttons is-centered mt-4" style="padding-top: 10px;">
+<!--                <button class="button is-primary">Primary</button>-->
+                                <a href="https://tonresear.ch/t/discover-cryptobot-the-all-in-one-cryptocurrency-bot-for-telegram/172"
+                   class="button is-primary"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Primary
+                </a>
+                <a href="https://t.me/amigocryptobot"
+                   class="button is-link"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Link
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

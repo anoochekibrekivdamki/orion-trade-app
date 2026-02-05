@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FastAPI Auth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+</head>
+<body>
+<section class="hero is-info is-fullheight">
+    <div class="hero-head">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-menu is-active">
+                    <div class="navbar-end">
+                        <a href="{{ request.url_for('index') }}" class="navbar-item">Home</a>
+                        {% if user %}
+                            <a href="{{ request.url_for('profile') }}" class="navbar-item">Chart</a>
+                            <a href="{{ request.url_for('tg_bot') }}" class="navbar-item">Amigo</a>
+                            <a href="{{ request.url_for('backtester') }}" class="navbar-item">Backtester</a>
+                            <a href="{{ request.url_for('logout') }}" class="navbar-item">Logout</a>
+                        {% else %}
+                            <a href="{{ request.url_for('login') }}" class="navbar-item">Login</a>
+                            <a href="{{ request.url_for('signup') }}" class="navbar-item">Sign Up</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            {% block content %}{% endblock %}
+
+
+        </div>
+    </div>
+</section>
+</body>
+</html>
